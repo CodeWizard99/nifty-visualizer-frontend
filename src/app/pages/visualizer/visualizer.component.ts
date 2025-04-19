@@ -11,6 +11,7 @@ import {
   UTCTimestamp,
   LineStyle,
   ISeriesApi,
+  CrosshairMode,
 } from 'lightweight-charts';
 
 @Component({
@@ -45,18 +46,15 @@ export class VisualizerComponent implements OnInit, AfterViewInit {
     this.chart = createChart(container, {
       width: container.clientWidth,
       height: 500,
-      layout: {
-        background: { color: '#ffffff' },
-        textColor: '#000000',
-      },
+      layout: { background: { color: '#fff' }, textColor: '#000' },
       grid: {
         vertLines: { color: '#eee' },
         horzLines: { color: '#eee' },
       },
-      timeScale: {
-        timeVisible: true,
-        secondsVisible: false,
+      crosshair: {
+        mode: CrosshairMode.Normal,
       },
+      timeScale: { timeVisible: true },
     });
 
     window.addEventListener('resize', () => {
