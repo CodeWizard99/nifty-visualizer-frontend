@@ -1,0 +1,55 @@
+<div class="container my-4">
+  <h2>Nifty Options Visualizer</h2>
+
+  <div class="row g-3 my-3">
+    <div class="col-md-3">
+      <label>Year</label>
+      <select
+        class="form-select"
+        [(ngModel)]="selectedYear"
+        (change)="onYearChange()"
+      >
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label>Expiry Date</label>
+      <select
+        class="form-select"
+        [(ngModel)]="selectedExpiry"
+        (change)="onExpiryChange()"
+      >
+        <option *ngFor="let expiry of expiries" [value]="expiry">
+          {{ expiry }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label>Strike Price</label>
+      <select class="form-select" [(ngModel)]="selectedStrike">
+        <option *ngFor="let strike of strikes" [value]="strike">
+          {{ strike }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label>Option Type</label>
+      <select class="form-select" [(ngModel)]="optionType">
+        <option value="CE">Call (CE)</option>
+        <option value="PE">Put (PE)</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" (click)="loadData()">Load Data</button>
+
+  <hr class="my-4" />
+
+  <!-- Chart Area -->
+  <div class="chart-wrapper mt-4">
+    <div id="tv-chart" class="chart-area"></div>
+  </div>
+</div>

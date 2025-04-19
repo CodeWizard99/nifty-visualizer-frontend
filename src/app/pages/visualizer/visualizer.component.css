@@ -1,0 +1,23 @@
+h2 {
+    font-weight: 600;
+  }
+  
+  .chart-container {
+    width: 100%;
+    height: 500px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
+  
+  .chart-wrapper {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+  
+  .chart-area {
+    width: 100%;
+    height: 100%;
+  }
+  
